@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "hexlet-code"
+version = "0.1.0"
+description = ""
+authors = ["Vell1ngton <tema.mordvinov1@gmail.com>"]
+readme = "README.md"
+packages = [
+  { include = "project50" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.scripts]
+gendiff = "project50.Scripts.gendiff:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
