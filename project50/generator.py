@@ -1,4 +1,5 @@
 import json
+from project50.cli import open_filer
 
 
 def sort_list(e):
@@ -6,20 +7,15 @@ def sort_list(e):
 
 
 def generate_diff(file1, file2):
-
-    with (
-        open(file1, 'r', encoding='utf-8') as f1,
-        open(file2, 'r', encoding='utf-8') as f2,
-    ):
-        data1 = json.load(f1)
-        data2 = json.load(f2)
+    data1 = open_filer(file1)
+    data2 = open_filer(file2)
     diff_file = {}
     data1_keys = data1.keys()
     data2_keys = data2.keys()
 
     for key in data1_keys:
         if key in data2_keys and data1[key] == data2[key]:
-            diff_file[f'   {key}'] = data1[key]
+            diff_file[f'  {key}'] = data1[key]
         elif key in data2_keys and data1[key] != data2[key]:
             diff_file[f'- {key}'] = data1[key]
             diff_file[f'+ {key}'] = data2[key]
@@ -32,8 +28,16 @@ def generate_diff(file1, file2):
 
     strings = []
     for key, item in diff_file.items():
-        strings.append(f"{key}: {item}")
-    result = ";\n ".join(sorted(strings, key=sort_list))
-    return '{\n' + f'{result}' + '\n}'
+        if item == True:
+            strings.append(f"{key}: true")
+        elif item == False:
+            strings.append(f"{key}: false")
+        else:
+            strings.append(f"{key}: {item}")
 
-print(generate_diff('file1.json', 'file2.json'))
+    print(strings)
+
+    result = "\n  ".join(sorted(strings, key=sort_list))
+    return '{\n  ' + f'{result}' + '\n}'
+
+

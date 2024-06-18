@@ -12,7 +12,7 @@ packages = [
 python = "^3.10"
 
 [tool.poetry.scripts]
-gendiff = "project50.Scripts.gendiff:main"
+gendiff = "project50.scripts.gendiff:main"
 
 [build-system]
 requires = ["poetry-core"]

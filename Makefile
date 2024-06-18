@@ -5,4 +5,7 @@ build:
 	poetry build
 
 gendiff:
-	poetry gendiff
+	poetry run gendiff
+
+lint:
+	poetry run flake8 project50
