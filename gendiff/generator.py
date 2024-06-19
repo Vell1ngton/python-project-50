@@ -1,5 +1,5 @@
 import json
-from project50.cli import open_filer
+from gendiff.cli import open_filer
 
 
 def sort_list(e):
@@ -34,9 +34,6 @@ def generate_diff(file1, file2):
             strings.append(f"{key}: false")
         else:
             strings.append(f"{key}: {item}")
-
-    print(strings)
-
     result = "\n  ".join(sorted(strings, key=sort_list))
     return '{\n  ' + f'{result}' + '\n}'
 

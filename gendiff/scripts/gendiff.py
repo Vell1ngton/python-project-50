@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from project50 import generate_diff
-from project50.cli import parser_args
+from gendiff import generate_diff
+from gendiff.cli import parser_args
 
 
 def main():

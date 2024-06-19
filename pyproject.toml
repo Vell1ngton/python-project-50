@@ -5,7 +5,7 @@ description = ""
 authors = ["Vell1ngton <tema.mordvinov1@gmail.com>"]
 readme = "README.md"
 packages = [
-  { include = "project50" },
+  { include = "gendiff" },
 ]
 
 [tool.poetry.dependencies]
@@ -13,7 +13,7 @@ python = "^3.10"
 pytest = "^8.2.2"
 
 [tool.poetry.scripts]
-gendiff = "project50.scripts.gendiff:main"
+gendiff = "gendiff.scripts.gendiff:main"
 
 [build-system]
 requires = ["poetry-core"]

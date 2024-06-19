@@ -1,4 +1,4 @@
-from project50 import generate_diff
+from gendiff import generate_diff
 import pytest
 
 @pytest.mark.parametrize('file1, file2, expected',
