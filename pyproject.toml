@@ -10,6 +10,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
+pytest = "^8.2.2"
 
 [tool.poetry.scripts]
 gendiff = "project50.scripts.gendiff:main"
