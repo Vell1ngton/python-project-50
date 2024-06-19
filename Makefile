@@ -9,3 +9,6 @@ gendiff:
 
 lint:
 	poetry run flake8 project50
+
+pytest:
+	poetry run pytest
