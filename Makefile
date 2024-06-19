@@ -12,3 +12,6 @@ lint:
 
 pytest:
 	poetry run pytest
+
+test-coverage:
+	poetry run pytest --cov=project50 --cov-report xml
