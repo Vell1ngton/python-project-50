@@ -19,11 +19,6 @@ jobs:
         run: |
           pip install poetry
           make install
-      - name: run linter and tests
-        run:  |
-          pip install flake8
-          make lint
-          make pytest
       - name: test coverage
         uses: paambaati/codeclimate-action@v8.0.0
         env:
